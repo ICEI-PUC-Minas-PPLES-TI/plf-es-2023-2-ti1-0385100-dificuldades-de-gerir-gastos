@@ -579,11 +579,11 @@
                 </ul>
                  <!-- <p class="text-center"><img class="img-fluid" src="assets/images/exemplo-funcionalidade.png" alt="Tela Cadastro de Contatos"></p> -->
 
-                <h5>Funcionalidade 6 - Calculadora de Investimentos</h5>
+                <h5>Funcionalidade 6 - Calculadora de Renda Fixa</h5>
                 <p>A calculadora de investimentos recebe o investimento desejado e retorna o rendimento previsto em cada uma das modalidades de renda fixa </p>
                 <ul class="list-unstyled">
                   <li><strong>Instruções de acesso: </strong><ul>
-                    <li>Abra o site e escolha a calculadora de investimentos</li>
+                    <li>Abra o site e escolha a opção calculadora de renda fixa</li>
                     <li>Preencha com o valor do investimento desejado e clique no botão calcular </li>
                   </ul></li>
                 </ul>
@@ -606,6 +606,17 @@
                   <li><strong>Instruções de acesso: </strong><ul>
                     <li>Abra o site e escolha a opção metas</li>
                     <li>Preencha o formulário com as informações necessárias para o cadastro de novas metas</li>
+                  </ul></li>
+                </ul>
+                <!-- <p class="text-center"><img class="img-fluid" src="assets/images/exemplo-funcionalidade.png" alt="Tela Cadastro de Contatos"></p> -->
+
+                <h5>Funcionalidade 9 - Simulador de Empréstimos </h5>
+                <p>Permite o usuário simular empréstimos de acordo com a taxa de juros de alguns bancos</p>
+                <ul class="list-unstyled">
+                  <li><strong>Estrutura de dados: </strong><a>Bancos</a></li>
+                  <li><strong>Instruções de acesso: </strong><ul>
+                    <li>Abra o site e escolha a opção simulador de empréstimos.</li>
+                    <li>Preencha o formulário com as informações necessárias para a simulação do empréstimo.</li>
                   </ul></li>
                 </ul>
                 <!-- <p class="text-center"><img class="img-fluid" src="assets/images/exemplo-funcionalidade.png" alt="Tela Cadastro de Contatos"></p> -->
@@ -663,6 +674,18 @@
                   }
                 </pre>
               </section>
+
+              <section>
+                <h5>Estrutura de Dados - Bancos </h5>
+                <p>Registro de bancos e taxas de juros da aplicação</p>
+                <pre>
+                  {
+                    "codigo": "bb",
+                    "nome": "Banco do Brasil",
+                    "taxaJurosAoMes": 0.0639
+                  },
+                </pre>
+              </section>
             </section>
 
             <!-- Módulos e APIs ================= -->
@@ -676,24 +699,10 @@
               </div>
 
               <section>
-                <h5>Images:</h5>
-                <ul>
-                  <li>Unsplash - <a target="_blank" href="https://unsplash.com/">https://unsplash.com/</a><span class="exemplo">EXEMPLO</span></li>
-                </ul>
-              </section>
-
-              <section>
-                <h5>Fonts:</h5>
-                <ul>
-                  <li>Icons Font Face - <a target="_blank" href="https://fontawesome.com/">https://fontawesome.com/</a><span class="exemplo">EXEMPLO</span></li>
-                </ul>
-              </section>
-
-              <section>
                 <h5>Scripts:</h5>
                 <ul>
-                  <li>jQuery - <a target="_blank" href="http://www.jquery.com/">http://www.jquery.com/</a><span class="exemplo">EXEMPLO</span></li>
-                  <li>Bootstrap 4 - <a target="_blank" href="http://getbootstrap.com/">http://getbootstrap.com/</a><span class="exemplo">EXEMPLO</span></li>
+                  <li>jQuery - <a target="_blank" href="http://www.jquery.com/">http://www.jquery.com/</a></li>
+                  <li>Bootstrap 4 - <a target="_blank" href="http://getbootstrap.com/">http://getbootstrap.com/</a></li>
                 </ul>
               </section>
             </section>
@@ -711,46 +720,39 @@
               <p>Apresente uma lista de perguntas e respostas comuns associadas ao projeto. Inclua perguntas como: (1) detalhes de acesso e uso do projeto; (2) informações sobre a instalação e configuração da aplicação; (3) questões sobre a manutenção da aplicação; (4) detalhes sobre a integração da aplicação com outros sistemas; (5) questões sobre a segurança da aplicação.</p>
             </div>
 
-            <span class="exemplo">EXEMPLO</span>
+            
             <div class="row">
               <div class="col-lg-12">
                 <div class="accordion accordion-alterate arrow-right" id="popularTopics">
                   <div class="card">
                     <div class="card-header" id="heading1">
                       <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapse1"
-                          aria-expanded="false" aria-controls="collapse1">What does royalty free mean?</a> </h5>
+                          aria-expanded="false" aria-controls="collapse1">Há alguma instalação necessária para usar o CashControl? </a> </h5>
                     </div>
                     <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#popularTopics">
-                      <div class="card-body"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it to make a type specimen book. It has survived not
-                        only five centuries, but also the leap into electronic typesetting, remaining essentially
-                        unchanged. </div>
+                      <div class="card-body"> 
+                        Não é necessário instalar nenhum software adicional, pois o CashControl é acessado via web. </div>
                     </div>
                   </div>
                   <div class="card">
                     <div class="card-header" id="heading2">
                       <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapse2"
-                          aria-expanded="false" aria-controls="collapse2">What is a single application?</a> </h5>
+                          aria-expanded="false" aria-controls="collapse2">Como posso acessar e começar a usar o CashControl?</a> </h5>
                     </div>
                     <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#popularTopics">
-                      <div class="card-body"> Iisque Anim pariatur cliche reprehenderit, enim eiusmod high life
-                        accusamus terry richardson ad squid. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
-                        moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch
-                        et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-                        proident. Ad vegan excepteur butcher vice lomo. </div>
+                      <div class="card-body"> 
+                        Acesse o site do CashControl e você pode acessar todas as funcionalidades, como cadastro de operações, categorias, e usar a calculadora de investimentos diretamente da interface principal. </div>
                     </div>
                   </div>
                   <div class="card">
                     <div class="card-header" id="heading3">
                       <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapse3"
-                          aria-expanded="false" aria-controls="collapse3">What are some examples of permitted end
-                          products?</a> </h5>
+                          aria-expanded="false" aria-controls="collapse3"> O que a aplicação CashControl oferece?
+                          </a> </h5>
                     </div>
                     <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#popularTopics">
-                      <div class="card-body"> Iisque persius interesset his et, in quot quidam persequeris vim, ad mea
-                        essent possim iriure. Mutat tacimates id sit. Ridens mediocritatem ius an, eu nec magna
-                        imperdiet. </div>
+                      <div class="card-body"> O CashControl é uma aplicação versátil de gerenciamento financeiro que oferece recursos como cadastro e gerenciamento de operações financeiras, categorização de despesas, filtragem e ordenação de dados financeiros, exclusão de registros, uma calculadora de investimentos para estimar rendimentos, e um ranking comparativo de cartões de crédito. Essas funcionalidades são projetadas para proporcionar aos usuários um controle abrangente e intuitivo sobre suas finanças pessoais e empresariais.
+                         </div>
                     </div>
                   </div>
                 </div>
