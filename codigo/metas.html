@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> METAS </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="metas.css">    
+</head>
+
+<body onload="init()" link="black" vlink="black" alink="black" class="p-3 m-0 border-0 bd-example m-0 border-0">
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/" class="navbar-logo">CashControl</a>
+            <ul class="navbar-menu">
+                <li class="navbar-item"><a href="metas.html">Metas </a></li>
+                <li class="navbar-item"><a href="calculadora.html">Calculadora de Renda Fixa</a></li>
+                <li class="navbar-item"><a href="cartoes.html">Ranking de Cartões</a></li>
+                <li class="navbar-item"><a href="Parte3.html">Simulador de Emprestimo</a></li>
+                <!-- Adicione mais itens aqui conforme necessário -->
+            </ul>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- FAZER POP UP PARA OS CRUDS -->
+    <div class="container-centralizado main-content">
+    <div class="d-flex justify-content-around mt-5">
+        <img src="img/leaf.png" alt="Logo" width="50" height="50">
+    </div>
+
+    <figure class="text-center"> 
+        <p class="h1"> Metas </p>
+    </figure>
+
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        
+        <button type="button" class="btn btn-warning " data-bs-toggle="modal" data-bs-target="#exampleModal" >
+            
+            <strong> + Nova Meta </strong>
+            
+        </button>
+
+        <button type="button" class="btn btn-warning " >
+            
+           <a href="https://www.skyscanner.com.br/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: black;"> <strong> BUSCA DE PASSAGENS E HOTEIS </strong></a>
+            
+        </button>
+
+    </div>
+
+
+        <!-- MODAL CADASTRAR -->
+  
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-warning" >
+          <h1 class="modal-title fs-5" id="exampleModalLabel"> Cadastrar Metas </h1>
+        </div>
+        <div class="modal-body">
+            <form id="form-meta">
+    
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label for="inputIdUsuario"> Id Usuário </label>
+                        <input type="text" class="form-control" id="inputIdUsuario" required placeholder="usuario" >
+                    </div>
+                </div>
+    
+                
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label for="inputTitulo">Titulo (*) </label>
+                        <input type="text" class="form-control" id="inputTitulo" required placeholder="Informe o titulo da meta">
+                    </div>
+                </div>
+    
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label for="inputValor">Valor que deseja Juntar R$ (*) </label>
+                        <input type="number" class="form-control" id="inputValor" required placeholder="Informe o valor da meta">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label for="inputGuardado">Valor que ja tem Guardado R$ (*) </label>
+                        <input type="number" class="form-control" id="inputGuardado" required placeholder="Informe o valor guardado">
+                    </div>
+                </div>
+    
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label for="inputDescricao">Descrição (*) </label>
+                        <input type="text" class="form-control" id="inputDescricao" required placeholder="">
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-warning"  id="btnInsert"> Cadastrar </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+          <!-- MODAL ATUALIZAR -->
+  
+          <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header bg-warning" >
+                  <h1 class="modal-title fs-5" id="exampleModalLabel"> Alterar Metas </h1>
+                </div>
+                <div class="modal-body">
+                    <form id="form-meta">
+
+                        <div class="form-group row">
+                            <div class="col-sm-6">
+                                <!-- <label for="inputId">Id</label> -->
+                                <input type="text" class="form-control" id="inputId1" placeholder="ID" disabled hidden>
+                            </div>
+                        </div>
+            
+                        <div class="form-group row">
+                            <div class="col-sm-6">
+                                <!-- <label for="inputIdUsuario"> Id Usuário </label> -->
+                                <input type="text" class="form-control" id="inputIdUsuario1" required placeholder="usuario" hidden>
+                            </div>
+                        </div>
+            
+                        
+                        <div class="form-group row">
+                            <div class="col-sm-6">
+                                <label for="inputTitulo">Titulo (*) </label>
+                                <input type="text" class="form-control" id="inputTitulo1" required placeholder="Informe o titulo da meta">
+                            </div>
+                        </div>
+            
+                        <div class="form-group row">
+                            <div class="col-sm-6">
+                                <label for="inputValor">Valor que deseja Juntar R$ (*) </label>
+                                <input type="number" class="form-control" id="inputValor1" required placeholder="Informe o valor da meta">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-sm-6">
+                                <label for="inputGuardado">Valor que ja tem Guardado R$ (*) </label>
+                                <input type="number" class="form-control" id="inputGuardado1" required placeholder="Informe o valor guardado">
+                            </div>
+                        </div>
+            
+                        <div class="form-group row">
+                            <div class="col-sm-6">
+                                <label for="inputDescricao">Descrição (*) </label>
+                                <input type="text" class="form-control" id="inputDescricao1" required placeholder="">
+                            </div>
+                        </div>
+        
+                    </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                  <button type="button" class="btn btn-warning" id="btnUpdate"> Atualizar </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+  <!-- MODAL DE EXCLUIR -->
+
+  <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-warning" >
+          <h1 class="modal-title fs-5" id="exampleModalLabel"> Deletar Categoria </h1>
+        </div>
+        <div class="modal-body">
+        <form id="form-meta">
+
+          <p> Você deseja excluir a meta: </p> 
+          <input type="text" class="form-control" id="inputTitulo2" required placeholder="Informe o nome da categoria" disabled>
+
+          <!-- <p> ID: </p> -->
+          <input type="text" class="form-control" id="inputId2" placeholder="ID"  hidden>
+
+          <!-- <p> ID do Usuario : </p> -->
+          <input type="text" class="form-control" id="inputIdUsuario2" required placeholder="usuario" disabled hidden>
+        </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Fechar </button>
+          <button type="button" class="btn btn-warning" id="btnDelete"> Deletar </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+        <div id="msg" class="col-sm-10 offset-sm-1 ">
+            <!--<div class="alert alert-warning">Contato não encontrado.</div>-->
+        </div>
+    </div>
+</div>
+
+        <div class="card-group row-cols-md-3 row-gap-3 p-2 g-col-2  " id="card-meta">
+
+        </div>
+    </div>
+
+        <!-- <div class="float" style="margin-left: 25%; margin-top: -35%;">
+            <div class="row justify-content-end">
+                <div class="col-sm-6">
+                    <div class="card text-center" style="max-width: 18rem;">
+                        <div class="card">
+                                <h5 class="card-header"> Calculadora de Progresso </h5>
+                                    <div class="card-body">
+
+                                        <p class="card-text"> Informe a meta em reais: </p>
+                                        <input type="number" id="meta" min="0" required><br>
+
+                                        <p class="card-text">Informe quanto você já economizou em reais:</p>
+                                        <input type="number" id="economizado" min="0" required><br><br>
+
+                                        <button onclick="calcularProgresso()" style="border: 0; background-color: transparent;"><img src="img/calculadora.png" alt="calcular" width="25" height="25"></button><br><br>
+
+                                        <div>
+                                            <p>Você alcançou <span id="progresso">0.00</span>% da sua meta.</p>
+                                            <progress id="barraProgresso" value="0" max="100"></progress>
+                                        </div>
+
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+    <style>
+        /* #barraProgresso{
+            background-color: green;
+            border-radius: 20px;
+        } */
+    </style>
+
+
+
+    <script src="metas.js"></script>
+    <script>
+
+
+        // carrega os dados a partir da API JSONServer
+        var db = []
+        readMeta(dados => {
+            db = dados;
+            ListaMeta()
+        });
+
+        // função para listar na tabela as metas que estão associados aos filtros 
+        function ListaMeta() {
+            
+            cardMeta = document.getElementById("card-meta");
+            cardMeta.innerHTML = "";
+
+            //readMeta (dados => {
+            // Popula a tabela com os registros do banco de dados
+            for (index = 0; index < db.length; index++) {
+                const meta = db[index];
+                    // Inclui o contato na tabela    
+                    cardMeta.innerHTML += `
+
+                                        <div class="row row-cols-1 row-cols g-2 ">
+                                                <div class="col-sm-2">
+                                                    <div class="card text-center" style="width: 18rem;"">
+                                                        <h5 class="card-header">${meta.titulo}</h5>
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">R$ ${meta.valor}</h5>
+                                                                <p class="card-text">${meta.descricao}</p>
+                                                                <p class="card-text"> Valor economizado: </p>
+                                                                <h5 class="card-text">${meta.guardado}</h5>
+                                                                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="border: 0; background-color: transparent;"><img src="img/escrever.png" alt="editar" width="25" height="25" onclick="populateModal('edit','${meta.id}','${meta.idusuario}','${meta.titulo}','${meta.valor}', '${meta.guardado}', '${meta.descricao}')"></button>
+                                                                <button class="btndelete" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal3" style="border: 0; background-color: transparent;"><img src="img/excluir.png" alt="excluir" width="25" height="25" onclick="populateModal('delete','${meta.id}','${meta.idusuario}','${meta.titulo}','${meta.valor}', '${meta.descricao}')"></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                                
+                                                
+                                                `;
+                
+            }
+            //})
+
+        }
+
+        // function calcularProgresso() {
+        //     var meta = document.getElementById("meta").value;
+        //     var economizado = document.getElementById("economizado").value;
+        //     var progresso = (economizado / meta) * 100;
+
+        //     document.getElementById("progresso").textContent = progresso.toFixed(2);
+        //     document.getElementById("barraProgresso").value = progresso;
+
+        // }
+
+
+
+
+        // Função para popular o modal de edição
+        function populateModal(action, id, idusuario, titulo, valor, guardado, descricao) {
+            let inputId,inputIdUsuario, inputTitulo, inputValor, inputGuardado, inputDescricao;
+
+            if(action == "edit") {
+                inputId = document.getElementById('inputId1');
+                inputIdUsuario = document.getElementById('inputIdUsuario1');
+                inputTitulo = document.getElementById('inputTitulo1');
+                inputValor = document.getElementById('inputValor1');
+                inputGuardado = document.getElementById('inputGuardado1');
+                inputDescricao = document.getElementById('inputDescricao1');
+            } else {
+                inputId = document.getElementById('inputId2');
+                inputIdUsuario = document.getElementById('inputIdUsuario2');
+                inputTitulo = document.getElementById('inputTitulo2');
+                inputValor = document.getElementById('inputValor2');
+                inputGuardado = document.getElementById('inputGuardado2');
+                inputDescricao = document.getElementById('inputDescricao2');
+            }
+
+            inputId.value = id
+            inputIdUsuario.value = idusuario
+            inputTitulo.value = titulo
+            inputValor.value = valor
+            inputGuardado.value = guardado
+            inputDescricao.value = descricao
+        }
+
+
+        function init() {
+            // Define uma variável para o formulário de categoria
+            formMeta = document.getElementById("form-meta");
+
+            // Adiciona funções para tratar os eventos 
+            btnInsert = document.getElementById("btnInsert");
+            btnInsert.addEventListener ('click', function () {
+                // Verifica se o formulário está preenchido corretamente
+                if (!formMeta.checkValidity()) {
+                    displayMessage("Preencha o formulário corretamente.");
+                    return;
+                }
+
+                // Obtem os valores dos campos do formulário
+                let campoIdUsuario = document.getElementById ('inputIdUsuario').value;
+                let campoTitulo = document.getElementById ('inputTitulo').value;
+                let campoValor = document.getElementById ('inputValor').value;
+                let campoGuardado = document.getElementById ('inputGuardado').value;
+                let campoDescricao = document.getElementById ('inputDescricao').value;
+                
+
+
+                // Cria um objeto com os dados do contato
+                let meta = { idusuario: campoIdUsuario,
+                             titulo: campoTitulo,
+                             valor: campoValor,
+                             guardado: campoGuardado,
+                             descricao: campoDescricao 
+                              
+                };
+
+                // Cria o contato no banco de dados
+                createMeta(meta);
+
+                // Limpa o formulario
+                formMeta.reset()
+            });
+
+
+            btnUpdate = document.getElementById("btnUpdate");
+            btnUpdate.addEventListener ('click', function () {
+
+                let campoId = document.getElementById("inputId1").value;
+                let campoIdUsuario = document.getElementById('inputIdUsuario1').value;
+                let campoTitulo = document.getElementById('inputTitulo1').value;
+                let campoValor = document.getElementById('inputValor1').value;
+                let campoGuardado = document.getElementById('inputGuardado1').value;
+                let campoDescricao = document.getElementById('inputDescricao1').value;
+
+                // if(campoTitulo == "" || campoValor == "" || campoDescricao == ""){
+
+                //     displayMessage("Preencha o formulário corretamente.");
+                //     return;
+
+                // } else{
+
+                // }
+
+                    let meta = {  idusuario: campoIdUsuario,
+                                  titulo: campoTitulo,
+                                  valor: campoValor,
+                                  guardado: campoGuardado,
+                                  descricao: campoDescricao
+                    };
+
+                    updateMeta(parseInt(campoId), meta, ListaMeta);
+                    
+                
+
+                // Fecha o modal
+                document.querySelector("#exampleModal2 [data-bs-dismiss=modal]").click() 
+
+                formMeta.reset()
+               
+                
+            });
+
+            // Trata o click do botão Deletar
+            btnDelete = document.getElementById("btnDelete");
+            btnDelete.addEventListener ('click', function () {
+
+
+                //Obtem os valores dos campos do formulário
+                let campoId = document.getElementById("inputId2").value;
+                //let campoIdUsuario = document.getElementById('inputIdUsuario2').value;
+                //let campoTitulo = document.getElementById('inputTitulo2').value;
+                //let campoValor = document.getElementById('inputValor2').value;
+                //let campoDescricao = document.getElementById('inputDescricao2').value;
+                deleteMeta(parseInt(campoId), ListaMeta);
+
+                // Fecha o modal
+                document.querySelector("#exampleModal3 [data-bs-dismiss=modal]").click() 
+                // Limpa o formulario
+                formMeta.reset()
+
+               
+                
+            });
+
+
+        
+            // Trata o click do botão Listar Contatos
+            btnClear = document.getElementById('btnClear');
+
+            
+            // Oculta a mensagem de aviso após alguns 5 segundos
+            msg = document.getElementById('msg');
+            msg.addEventListener ("DOMSubtreeModified", function (e) {
+                if (e.target.innerHTML == "") return;
+                setTimeout (function () {
+                    alert = msg.getElementsByClassName("alert");
+                    alert[0].remove();
+                }, 5000);
+            })
+
+            ListaMeta();
+
+        }
+    </script>
+
+</body>
+
+</html>

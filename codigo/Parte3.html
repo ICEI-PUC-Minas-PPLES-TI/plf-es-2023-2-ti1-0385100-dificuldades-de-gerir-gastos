@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Empréstimos</title>
+    <link rel="stylesheet" href="Parte3.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/" class="navbar-logo">CashControl</a>
+            <ul class="navbar-menu">
+                <li class="navbar-item"><a href="metas.html">Metas </a></li>
+                <li class="navbar-item"><a href="calculadora.html">Calculadora de Renda Fixa</a></li>
+                <li class="navbar-item"><a href="cartoes.html">Ranking de Cartões</a></li>
+                <li class="navbar-item"><a href="Parte3.html">Simulador de Emprestimo</a></li>
+                <!-- Adicione mais itens aqui conforme necessário -->
+            </ul>
+            <div class="navbar-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="divmae">
+    <h1>Simulador de Empréstimos</h1>
+
+    <label for="valor">Valor do Empréstimo:</label>
+    <input type="number" id="valor" placeholder="Informe o valor do empréstimo">
+
+    <label for="parcelas">Número de Parcelas:</label>
+    <input type="number" id="parcelas" placeholder="Informe o número de parcelas">
+
+    <label for="banco">Escolha o Banco:</label>
+    <select id="banco"></select>
+
+    <button onclick="calcularEmprestimo()">Calcular</button>
+
+    <div id="resultado"></div>
+
+    </div>
+
+    <script src="javaparte3.js"></script>
+
+    <script>
+        window.onload = async function () {
+            var bancos;  
+    
+            async function carregarBancos() {
+                const response = await fetch('jasonparte3.json');
+                bancos = await response.json();
+                
+                const selectBanco = document.getElementById('banco');
+        
+                bancos.forEach(banco => {
+                    const option = document.createElement('option');
+                    option.value = banco.codigo;
+                    option.text = `${banco.nome} (${(banco.taxaJurosAoMes * 100).toFixed(2)}%)`;
+                    selectBanco.appendChild(option);
+                });
+            }
+        
+            function formatarMoeda(valor) {
+                return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            }
+        
+            function calcularEmprestimo() {
+                if (!bancos) {
+                    alert('Bancos não carregados. Tente novamente.');
+                    return;
+                }
+        
+                var valor = parseFloat(document.getElementById('valor').value);
+                var parcelas = parseInt(document.getElementById('parcelas').value);
+                var codigoBanco = document.getElementById('banco').value;
+        
+                const banco = bancos.find(b => b.codigo === codigoBanco);
+        
+                if (!banco) {
+                    alert('Banco não encontrado.');
+                    return;
+                }
+        
+                var taxaJurosAoMes = banco.taxaJurosAoMes;
+        
+                var valorTotal = valor * Math.pow((1 + taxaJurosAoMes), parcelas);
+                var valorParcela = valorTotal / parcelas;
+        
+                var resultado = "Banco: " + banco.nome +
+                                "<br>Valor do Empréstimo: " + formatarMoeda(valor) +
+                                "<br>Número de Parcelas: " + parcelas +
+                                "<br>Valor Total a Pagar: " + formatarMoeda(valorTotal) +
+                                "<br>Valor da Parcela: " + formatarMoeda(valorParcela);
+        
+                document.getElementById('resultado').innerHTML = resultado;
+            }
+            
+            console.log('Chamou carregarBancos()');
+            await carregarBancos();
+    
+            document.querySelector('button').addEventListener('click', calcularEmprestimo);
+        };
+    </script>
+</body>
+</html>

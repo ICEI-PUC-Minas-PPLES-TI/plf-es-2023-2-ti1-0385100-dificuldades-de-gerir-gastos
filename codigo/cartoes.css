@@ -1,0 +1,119 @@
+/* style.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.navbar {
+    background-color: #ff7f50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 18px;
+    position: fixed; /* Fixa o navbar no topo */
+    top: 0; /* Alinha o topo do navbar com o topo da página */
+    left: 0; /* Alinha a esquerda do navbar com a esquerda da página */
+    width: 100%; /* Faz o navbar ocupar toda a largura da tela */
+    z-index: 1000; /* Garante que o navbar fique acima de outros elementos da página */
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: center; /* Centraliza os itens no container */
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-logo {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.navbar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centraliza os itens do menu horizontalmente */
+    align-items: center; /* Alinha os itens do menu verticalmente */
+}
+
+.navbar-item {
+    margin: 0 20px; /* Espaçamento horizontal entre os itens do menu */
+}
+
+.navbar-item a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: white;
+}
+
+.container {
+    margin-top: 80px;
+}
+
+/* Responsividade para telas menores que 768px */
+
+@media screen and (max-width: 768px) {
+    .navbar-menu {
+        display: none;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-toggle {
+        display: block;
+        margin-right: 30px;
+    }
+
+    .navbar-item {
+        margin: 10px 30px;
+    }
+
+    .navbar-container {
+        justify-content: space-between;
+    }
+
+    .teste {
+        width: 100%;
+    }
+}
+
+.teste{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.botoes{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.a{
+    margin-left: 20px;
+    
+    margin-top: 20px;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Login </title>
+  <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+  <div class="container" id="container">
+    
+    <div class="form-container register-container">
+      
+      <form action="#">
+        <h1>Registrar </h1>
+        <input type="text" placeholder="Nome" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" id="senha" placeholder="Senha" required>
+        <input type="password" id="confirm-senha" placeholder="Senha" required>
+
+        <button><a href="#" style="text-decoration: none; color: black;">Registrar</a></button>
+      </form>
+    </div>
+
+    <div class="form-container login-container">
+      <form action="#">
+        <h1 style="color: #ff7043;">CashControl</h1>
+        <h1>Login </h1>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Senha" required>
+        <div class="content">
+          <!-- <div class="pass-link">
+            <a href="#">Esqueci minha senha</a>
+          </div> -->
+        </div>
+        <button onclick="window.location.href='index.html'">Login</button>
+      </form>
+    </div>
+
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1 class="title">Olá <br> Amigos</h1>
+          <p>Se você tiver uma conta, faça login aqui e aproveite</p>
+          <button class="ghost" id="login">Login
+            <i class="lni lni-arrow-left login"></i>
+          </button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1 class="title">Cadastre-se <br> agora </h1>
+          <p>Se você ainda não tem uma conta, junte-se a nós e comece sua jornada</p>
+          <button class="ghost" id="register">Registrar
+            <i class="lni lni-arrow-right register"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="login.js"></script>
+
+</body>
+</html>

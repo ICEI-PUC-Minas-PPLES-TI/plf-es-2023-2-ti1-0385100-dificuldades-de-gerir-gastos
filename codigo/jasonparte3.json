@@ -1,0 +1,33 @@
+[
+    {
+      "codigo": "bb",
+      "nome": "Banco do Brasil",
+      "taxaJurosAoMes": 0.0639
+    },
+    {
+      "codigo": "bradesco",
+      "nome": "Bradesco",
+      "taxaJurosAoMes": 0.0964
+    },
+    {
+      "codigo": "caixa",
+      "nome": "Caixa Econômica Federal",
+      "taxaJurosAoMes": 0.0496
+    },
+    {
+      "codigo": "itau",
+      "nome": "Itaú",
+      "taxaJurosAoMes": 0.0973
+    },
+    {
+      "codigo": "safra",
+      "nome": "Safra",
+      "taxaJurosAoMes": 0.0725
+    },
+    {
+      "codigo": "santander",
+      "nome": "Santander",
+      "taxaJurosAoMes": 0.0999
+    }
+  ]
+  
