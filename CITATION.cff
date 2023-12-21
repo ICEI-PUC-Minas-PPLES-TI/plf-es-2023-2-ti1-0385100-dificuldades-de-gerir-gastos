@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
-title: 
+title: CashControl
 authors:
   - family-names: Pereira dos Santos
     given-names: Raquel Cristina
@@ -32,5 +31,3 @@ repository-code: https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2023-2-ti1-03
 license: CC-BY-4.0
 version: 1.0.0
 date-released: 2023-12-14
-
->>>>>>> 576e4073eb686b7caee5801aac8f95491eb4d605
